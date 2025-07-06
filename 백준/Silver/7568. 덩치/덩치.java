@@ -1,26 +1,21 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int people = input.nextInt();
+        int n = input.nextInt();
+        int[][] people = new int[n][2];
 
-        int[][] bigArr  = new int[people][2];
-
-        for (int i = 0; i < people; i++) {
-            bigArr[i][0] = input.nextInt(); //몸무게
-            bigArr[i][1] = input.nextInt(); //키
+        for (int i = 0; i < n; i++) {
+            people[i][0] = input.nextInt(); // 몸무게
+            people[i][1] = input.nextInt(); // 키
         }
 
-        for (int i = 0; i < people; i++) {
+        for (int i = 0; i < n; i++) {
             int rank = 1;
-            for (int j = 0; j < people; j++) {
-                if (i == j)
-                    continue;
-
-                if (bigArr[i][0]<bigArr[j][0] && bigArr[i][1]<bigArr[j][1]) {
+            for (int j = 0; j < n; j++) {
+                if (i != j && people[i][0] < people[j][0] && people[i][1] < people[j][1]) {
                     rank++;
                 }
             }
@@ -28,4 +23,3 @@ public class Main {
         }
     }
 }
-
