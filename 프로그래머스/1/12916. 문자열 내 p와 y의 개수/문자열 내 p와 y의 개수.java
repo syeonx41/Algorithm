@@ -1,0 +1,17 @@
+class Solution {
+    boolean solution(String s) {
+        int p = 0;
+        int y = 0;
+        s = s.toLowerCase(); 
+        for(char c : s.toCharArray()){
+            if(c == 'p'){
+                p++;
+            }
+            if(c == 'y'){
+                y++;
+            }
+        }
+        return p == y;
+    }
+            
+}
